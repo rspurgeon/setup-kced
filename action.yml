@@ -1,0 +1,17 @@
+name: Setup kced
+description: Install kced from Kong
+runs:
+  using: node12
+  main: dist/index.js
+inputs:
+  kced-version:
+    description: The version of kced to install
+    required: false
+  token:
+    description: The GitHub token to use when fetching the latest version of kced
+    default: ${{ github.token }}
+    required: false
+  wrapper:
+    description: Add a wrapper script to make stdout, stderr and errorcode available as outputs
+    default: "false"
+    required: false
