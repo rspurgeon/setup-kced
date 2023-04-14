@@ -19,14 +19,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: kong/setup-kced@v1
+      - uses: rspurgeon/setup-kced@v1
       - run: kced version
 ```
 
 You can also specific a specific version to install with the `kced-version` input:
 
 ```yaml
-- uses: kong/setup-kced@v1
+- uses: rspurgeon/setup-kced@v1
   with:
     kced-version: 0.1.11
 ```
@@ -37,9 +37,9 @@ If you need to capture the output for use in a later step, you can add a wrapper
 
 ```yaml
 steps:
-  - uses: kong/setup-kced@v1
+  - uses: rspurgeon/setup-kced@v1
     with:
-      kced-version: 1.7.0
+      kced-version: 0.1.11
       wrapper: true
   - run: kced version
     id: kced_version
